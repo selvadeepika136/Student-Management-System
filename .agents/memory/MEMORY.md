@@ -1,0 +1,1 @@
+- [Student app integration lessons](student-app-integration.md) — preserve date-only values at the API/database boundary and keep iterable DOM types enabled for generated clients.

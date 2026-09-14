@@ -1,6 +1,6 @@
-# [Project name]
+# Student Management System
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A full-stack student register for college operations teams to manage student records, filters, validation, and CRUD workflows.
 
 ## Run & Operate
 
@@ -22,15 +22,24 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/student-management-system` — React/Vite web application and responsive UI.
+- `artifacts/api-server/src/routes/students.ts` — student REST endpoints and validation.
+- `lib/api-spec/openapi.yaml` — source of truth for student API contracts and generated hooks.
+- `lib/db/src/schema/students.ts` — PostgreSQL/Drizzle student table and insert model.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The frontend uses generated React Query hooks from the OpenAPI contract instead of hand-written API types.
+- Student data is stored in the pre-configured PostgreSQL database through Drizzle ORM.
+- Calendar-only enrollment dates are stored as `YYYY-MM-DD` strings to avoid timezone shifts.
+- The dashboard summary is a read-only aggregate endpoint so counts and department distribution stay database-backed.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Dashboard with total, active, inactive, and department counts.
+- Searchable and filterable student register.
+- Create, edit, detail, and delete flows with client/server validation.
+- Responsive desktop and mobile layouts with loading, empty, error, and confirmation states.
 
 ## User preferences
 
