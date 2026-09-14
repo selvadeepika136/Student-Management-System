@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --background: 48 29% 94%;
+  --foreground: 211 43% 18%;
+  --border: 44 16% 84%;
+  --input: 44 16% 79%;
+  --ring: 46 82% 53%;
+  --card: 48 33% 98%;
+  --card-foreground: 211 43% 18%;
+  --primary: 46 84% 55%;
+  --primary-foreground: 211 43% 18%;
+  --secondary: 211 43% 18%;
+  --secondary-foreground: 48 33% 98%;
+  --muted: 45 18% 89%;
+  --muted-foreground: 211 18% 43%;
+  --accent: 166 37% 35%;
+  --accent-foreground: 48 33% 98%;
+  --destructive: 3 60% 50%;
+  --destructive-foreground: 48 33% 98%;
+  --app-font-sans: 'Manrope', ui-sans-serif, sans-serif;
+  --app-font-mono: 'Space Mono', ui-monospace, monospace;
+  --radius: 0.875rem;
+}
+
+.dark {
+  --background: 211 43% 11%;
+  --foreground: 48 33% 95%;
+  --border: 211 25% 24%;
+  --input: 211 25% 28%;
+  --ring: 46 84% 55%;
+  --card: 211 37% 15%;
+  --card-foreground: 48 33% 95%;
+  --primary: 46 84% 55%;
+  --primary-foreground: 211 43% 18%;
+  --secondary: 211 28% 25%;
+  --secondary-foreground: 48 33% 95%;
+  --muted: 211 28% 22%;
+  --muted-foreground: 211 15% 68%;
+  --accent: 166 37% 46%;
+  --accent-foreground: 48 33% 98%;
+  --destructive: 3 60% 58%;
+  --destructive-foreground: 48 33% 98%;
+}
+
+@layer base {
+  .student-management-current {
+    font-family: var(--app-font-sans);
+    color: hsl(var(--foreground));
+  }
+}
+
+@keyframes student-rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.student-management-current .animate-rise-in { animation: student-rise-in 0.45s ease-out both; }
+.student-management-current .delay-1 { animation-delay: 70ms; }
+.student-management-current .delay-2 { animation-delay: 140ms; }
+.student-management-current .delay-3 { animation-delay: 210ms; }
+.student-management-current .data-label {
+  font-family: var(--app-font-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.student-management-current .focus-ring:focus-visible {
+  outline: 3px solid hsl(var(--ring) / .55);
+  outline-offset: 3px;
+}
+.student-management-current .grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .035;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.36'/%3E%3C/svg%3E");
+}
